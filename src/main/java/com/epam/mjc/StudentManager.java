@@ -18,4 +18,12 @@ public class StudentManager {
     }
 
   }
+  
+  public Student find(long studentID) throws StudentNotFoundException {
+        if (Student.getValueOf(studentID) == null) {
+            throw new StudentNotFoundException("Could not find student with ID " + studentID);
+        } else {
+            return Student.getValueOf(studentID);
+        }
+    }
 }
